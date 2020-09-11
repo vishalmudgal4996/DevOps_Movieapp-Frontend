@@ -41,7 +41,7 @@ const styles = (theme) => ({
     transform: "translateZ(0)",
   },
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing.unit,
     minWidth: 240,
     maxWidth: 240,
   },
