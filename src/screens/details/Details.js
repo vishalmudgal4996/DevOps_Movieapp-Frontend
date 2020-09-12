@@ -67,7 +67,8 @@ class Details extends Component {
   }
 
   artistClickHandler = (url) => {
-    window.location = url;
+    // window.location = url;
+    window.open(url);
   };
 
   starClickHandler = (id) => {
@@ -135,7 +136,10 @@ class Details extends Component {
             <div className="marginTop16">
               <Typography>
                 <span className="bold">Plot:</span>{" "}
-                <a href={movie.wiki_url}>(Wiki Link)</a> {movie.storyline}{" "}
+                <a href={movie.wiki_url} target="_blank">
+                  (Wiki Link)
+                </a>{" "}
+                {movie.storyline}{" "}
               </Typography>
             </div>
             <div className="trailerContainer">
