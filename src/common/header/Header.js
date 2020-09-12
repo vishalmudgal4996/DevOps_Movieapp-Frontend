@@ -116,8 +116,6 @@ class Header extends Component {
     let xhrLogin = new XMLHttpRequest();
     xhrLogin.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
-        console.log(xhrLogin.getResponseHeader("access-token"));
-
         sessionStorage.setItem("uuid", JSON.parse(this.responseText).id);
         sessionStorage.setItem(
           "access-token",
@@ -224,7 +222,6 @@ class Header extends Component {
     let xhrSignup = new XMLHttpRequest();
     xhrSignup.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
-        console.log(this.responseText);
         that.setState({ registrationSuccess: true });
       }
     });
