@@ -11,7 +11,7 @@ const Notify = () => {
       color="secondary"
       onClick={() => {
         alert.show(
-          "In order to use this application.You need to add and enable CORS!"
+          "In order to use this application.You need to add and enable CORS extension!"
         );
       }}
     >
