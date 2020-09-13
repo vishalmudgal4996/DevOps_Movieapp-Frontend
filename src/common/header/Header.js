@@ -16,6 +16,7 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Alert from "../Alert";
 
 const customStyles = {
   content: {
@@ -237,50 +238,113 @@ class Header extends Component {
       <div>
         <header className="app-header">
           <img src={logo} className="app-logo" alt="logo" />
-          {!this.state.loggedIn ? (
-            <div className="login-button">
-              <Button
-                variant="contained"
-                color="default"
-                onClick={this.openModalHandler}
-              >
-                Login
-              </Button>
-            </div>
-          ) : (
-            <div className="login-button">
-              <Button
-                variant="contained"
-                color="default"
-                onClick={this.logoutHandler}
-              >
-                Logout
-              </Button>
-            </div>
-          )}
-          {this.props.showBookShowButton === "true" && !this.state.loggedIn ? (
-            <div className="bookshow-button">
-              <Button
-                variant="contained"
-                onClick={this.openModalHandler}
-                color="primary"
-              >
-                BOOK SHOW
-              </Button>
+          {this.props.showAlertButton === "true" ? (
+            <div className="alert-div">
+              <Alert />
             </div>
           ) : (
             ""
           )}
-          {this.props.showBookShowButton === "true" && this.state.loggedIn ? (
-            <div className="bookshow-button">
-              <Link to={"/bookshow/" + this.props.id}>
-                <Button variant="contained" color="primary">
-                  BOOK SHOW
-                </Button>
-              </Link>
+          {this.props.showBookShowButton === "true" ? (
+            <div className="btn-div-width">
+              {!this.state.loggedIn ? (
+                <div className="login-button-showbookbtn">
+                  <Button
+                    variant="contained"
+                    color="default"
+                    onClick={this.openModalHandler}
+                  >
+                    Login
+                  </Button>
+                </div>
+              ) : (
+                <div className="login-button-showbookbtn">
+                  <Button
+                    variant="contained"
+                    color="default"
+                    onClick={this.logoutHandler}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              )}
+              {this.props.showBookShowButton === "true" &&
+              !this.state.loggedIn ? (
+                <div className="bookshow-button">
+                  <Button
+                    variant="contained"
+                    onClick={this.openModalHandler}
+                    color="primary"
+                  >
+                    BOOK SHOW
+                  </Button>
+                </div>
+              ) : (
+                ""
+              )}
+              {this.props.showBookShowButton === "true" &&
+              this.state.loggedIn ? (
+                <div className="bookshow-button">
+                  <Link to={"/bookshow/" + this.props.id}>
+                    <Button variant="contained" color="primary">
+                      BOOK SHOW
+                    </Button>
+                  </Link>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           ) : (
-            ""
+            <div className="btn-div">
+              {!this.state.loggedIn ? (
+                <div className="login-button">
+                  <Button
+                    variant="contained"
+                    color="default"
+                    onClick={this.openModalHandler}
+                  >
+                    Login
+                  </Button>
+                </div>
+              ) : (
+                <div className="login-button">
+                  <Button
+                    variant="contained"
+                    color="default"
+                    onClick={this.logoutHandler}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              )}
+              {this.props.showBookShowButton === "true" &&
+              !this.state.loggedIn ? (
+                <div className="bookshow-button">
+                  <Button
+                    variant="contained"
+                    onClick={this.openModalHandler}
+                    color="primary"
+                  >
+                    BOOK SHOW
+                  </Button>
+                </div>
+              ) : (
+                ""
+              )}
+              {this.props.showBookShowButton === "true" &&
+              this.state.loggedIn ? (
+                <div className="bookshow-button">
+                  <Link to={"/bookshow/" + this.props.id}>
+                    <Button variant="contained" color="primary">
+                      BOOK SHOW
+                    </Button>
+                  </Link>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
           )}
         </header>
         <Modal

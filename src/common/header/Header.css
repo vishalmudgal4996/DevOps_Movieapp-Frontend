@@ -2,12 +2,28 @@
   background-color: #222;
   height: 36px;
   padding: 8px 32px 8px 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.login-button,
-.bookshow-button {
-  float: right;
+.login-button-showbookbtn {
+  margin-right: 10px;
 }
+
+.btn-div {
+  width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.btn-div-width {
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .bookshow-button {
   margin-right: 8px;
 }
