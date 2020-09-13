@@ -16,7 +16,9 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Alert from "../Alert";
+import Notify from "../Notify";
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 
 const customStyles = {
   content: {
@@ -27,6 +29,12 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
   },
+};
+
+const options = {
+  // timeout: 10000,
+  position: positions.TOP_CENTER,
+  width: "max-content !important",
 };
 
 const TabContainer = function (props) {
@@ -240,11 +248,14 @@ class Header extends Component {
           <img src={logo} className="app-logo" alt="logo" />
           {this.props.showAlertButton === "true" ? (
             <div className="alert-div">
-              <Alert />
+              <Provider template={AlertTemplate} {...options}>
+                <Notify />
+              </Provider>
             </div>
           ) : (
             ""
           )}
+
           {this.props.showBookShowButton === "true" ? (
             <div className="btn-div-width">
               {!this.state.loggedIn ? (
