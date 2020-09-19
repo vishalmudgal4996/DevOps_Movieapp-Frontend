@@ -206,6 +206,16 @@ class Home extends Component {
             </GridListTile>
           ))}
         </GridList>
+        <div className="cors-notification">
+          <a
+            href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en"
+            target="_blank"
+          >
+            CORS Extension
+          </a>
+          <br />
+          <span>For now shows are available for revenant movie only.</span>
+        </div>
         <div className="flex-container">
           <div className="left">
             <GridList
